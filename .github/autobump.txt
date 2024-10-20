@@ -2,6 +2,7 @@ a2ps
 abcmidi
 abi3audit
 abseil
+abyss
 ack
 acl2
 act
@@ -475,7 +476,6 @@ code-cli
 code-minimap
 code-server
 codec2
-codecov-cli
 codelimit
 coder
 codespell
@@ -511,6 +511,7 @@ corepack
 coreutils
 corral
 corrosion
+corsixth
 cortex
 cosign
 cotila
@@ -522,6 +523,7 @@ coursier
 cp2k
 cpi
 cpm
+cpp-gsl
 cpp-httplib
 cppad
 cppcheck
@@ -1520,6 +1522,7 @@ libcss
 libcyaml
 libdap
 libdeflate
+libdex
 libdivide
 libdnet
 libdom
@@ -2947,6 +2950,7 @@ vitess
 vivid
 vlang
 vnstat
+vnu
 volk
 volta
 votca
