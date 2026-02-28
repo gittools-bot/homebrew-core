@@ -1,8 +1,8 @@
 class Hl < Formula
   desc "Fast and powerful log viewer and processor"
   homepage "https://github.com/pamburus/hl"
-  url "https://github.com/pamburus/hl/archive/refs/tags/v0.35.4.tar.gz"
-  sha256 "c89bef668256263be1d162a060e3384a0b675445afb08c4c303154aee02df257"
+  url "https://github.com/pamburus/hl/archive/refs/tags/v0.36.0.tar.gz"
+  sha256 "533a33033fc15a65a3952c77466f25943a52744334dda8749e15168580f355e7"
   license "MIT"
   head "https://github.com/pamburus/hl.git", branch: "master"
 
@@ -33,12 +33,12 @@ class Hl < Formula
     assert_match version.to_s, shell_output("#{bin}/hl --version")
 
     (testpath/"sample.log").write <<~EOS
-      time="2025-02-17 12:00:00" level=INFO msg="Starting process"
-      time="2025-02-17 12:01:00" level=ERROR msg="An error occurred"
-      time="2025-02-17 12:02:00" level=INFO msg="Process completed"
+      time="2026-02-28 12:00:00" level=INFO msg="Starting process"
+      time="2026-02-28 12:01:00" level=ERROR msg="An error occurred"
+      time="2026-02-28 12:02:00" level=INFO msg="Process completed"
     EOS
 
     output = shell_output("#{bin}/hl --level ERROR sample.log")
-    assert_equal "Feb 17 12:01:00.000 [ERR] An error occurred", output.chomp
+    assert_equal "2026-02-28 12:01:00.000 [ERR] An error occurred", output.chomp
   end
 end
