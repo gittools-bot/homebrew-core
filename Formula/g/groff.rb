@@ -1,11 +1,10 @@
 class Groff < Formula
   desc "GNU troff text-formatting system"
   homepage "https://www.gnu.org/software/groff/"
-  url "https://ftpmirror.gnu.org/gnu/groff/groff-1.23.0.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/groff/groff-1.23.0.tar.gz"
-  sha256 "6b9757f592b7518b4902eb6af7e54570bdccba37a871fddb2d30ae3863511c13"
+  url "https://ftpmirror.gnu.org/gnu/groff/groff-1.24.0.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/groff/groff-1.24.0.tar.gz"
+  sha256 "e79bbcd8ff3ed0200e7ac55d3962a15e118c1229990213025f2fc8b264727570"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 arm64_tahoe:    "7684d4604e213bf74894799b38f98153e743c504c493d7cedff5c25109d46854"
