@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.170.0",
-      revision: "bd614accba811b407ae5c9ec6f1eecd3bdc29911"
+      tag:      "v1.171.0",
+      revision: "6e47ff626670a8bded8b527f61d709e2e332ec4b"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -67,8 +67,8 @@ class Semgrep < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/d0/f5/4473ad9b48cd0420a2d762a3750fa0e078e23e060b1af72662e5987e5530/bracex-3.0.tar.gz"
-    sha256 "b73f718d6bd98d8419e45df02426c86e9967c179949f779340d6c3a8c83b9111"
+    url "https://files.pythonhosted.org/packages/ac/01/5f394b8bcd6e5b92f73130990960423bbb19711f906bd9fe9ea5557c667c/bracex-3.0.1.tar.gz"
+    sha256 "4e38e32392e4a4780fe15d644bfc7c8514057cfc3861e060b11814ce829c25e4"
   end
 
   resource "charset-normalizer" do
@@ -77,8 +77,8 @@ class Semgrep < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "click-option-group" do
@@ -287,8 +287,8 @@ class Semgrep < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
-    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
+    url "https://files.pythonhosted.org/packages/6c/10/a34c656829ffc1c4b22ef36d70d9ebb6b99c020e2aeb17cee5485099f028/sse_starlette-3.4.6.tar.gz"
+    sha256 "725f8a1bd6d26ae1b2c9610c0ef5065dfdd496f3988d28adcf8c4b49dc25c627"
   end
 
   resource "starlette" do
