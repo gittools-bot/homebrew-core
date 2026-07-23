@@ -1,8 +1,8 @@
 class Ols < Formula
   desc "Language server for The Odin Programming Language"
   homepage "https://github.com/DanielGavin/ols"
-  url "https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-05.tar.gz"
-  sha256 "387b9f47304abab5c7cbe12f041c85de892ddc94a54e03f2789ff6ac9fc16386"
+  url "https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-06.tar.gz"
+  sha256 "f8055ff723994dc4debc02817c230d0173c43a23df4a9d6a7104fea69bfeeb79"
   license "MIT"
 
   bottle do
