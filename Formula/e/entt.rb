@@ -12,7 +12,7 @@ class Entt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "886962bdfc34d5b340028ef7d96fe497d4f40645e8dff30d9887524bf4859fc1"
+    sha256 cellar: :any_skip_relocation, all: "e01e8be59d9793cdd9fea68edc82707291606027ee9602ac78f8f957228c9c1d"
   end
 
   depends_on "cmake" => :build
