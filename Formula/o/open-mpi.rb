@@ -7,6 +7,7 @@ class OpenMpi < Formula
     "BSD-3-Clause-Open-MPI",
     "mpich2", # opal/datatype/opal_datatype_pack_unpack_predefined.h
   ]
+  revision 1
   compatibility_version 1
 
   livecheck do
