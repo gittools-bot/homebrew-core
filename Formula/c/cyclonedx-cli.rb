@@ -1,8 +1,8 @@
 class CyclonedxCli < Formula
   desc "Tool for analysis and manipulation of CycloneDX SBOMs"
   homepage "https://cyclonedx.org/"
-  url "https://github.com/CycloneDX/cyclonedx-cli/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "9ba4bcb4c315b28fbf5e461511ff94c5b8088a4696b018368694bd235341d3cc"
+  url "https://github.com/CycloneDX/cyclonedx-cli/archive/refs/tags/v0.33.1.tar.gz"
+  sha256 "01574e2e7d1cfe88ed50bbe7e87663af45a6b261ba11518a6c8eb34f809e1309"
   license "Apache-2.0"
 
   bottle do
