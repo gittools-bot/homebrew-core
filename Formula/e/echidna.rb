@@ -23,11 +23,13 @@ class Echidna < Formula
 
   depends_on "ghc@9.10" => :build
   depends_on "haskell-stack" => :build
+  depends_on "pkgconf" => :build
   depends_on "solidity" => :test
 
   depends_on "crytic-compile"
   depends_on "gmp"
   depends_on "libff"
+  depends_on "libyaml"
   depends_on "secp256k1"
   depends_on "slither-analyzer"
 
@@ -40,23 +42,31 @@ class Echidna < Formula
   def install
     ENV.cxx11
 
-    # Let `stack` handle its own parallelization
-    jobs = ENV.make_jobs
-    ENV.deparallelize
-
-    ghc_args = [
-      "--extra-include-dirs=#{Formula["libff"].include}",
-      "--extra-lib-dirs=#{Formula["libff"].lib}",
-      "--extra-include-dirs=#{Formula["secp256k1"].include}",
-      "--extra-lib-dirs=#{Formula["secp256k1"].lib}",
-      "--flag=echidna:-static",
-      "--no-install-ghc",
-      "--skip-ghc-check",
-      "--system-ghc",
+    args = %W[
+      --extra-include-dirs=#{Formula["libff"].include}
+      --extra-include-dirs=#{Formula["secp256k1"].include}
+      --extra-lib-dirs=#{Formula["libff"].lib}
+      --extra-lib-dirs=#{Formula["secp256k1"].lib}
+      --flag=echidna:-static
+      --flag=libyaml:system-libyaml
+      --jobs=#{ENV.make_jobs}
+      --local-bin-path=#{bin}
+      --no-install-ghc
+      --skip-ghc-check
+      --system-ghc
     ]
-    ghc_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
+    if OS.linux?
+      args << "--ghc-options=-pie"
 
-    system "stack", "-j#{jobs}", "--local-bin-path=#{bin}", "install", *ghc_args
+      # Using global configuration to apply options to all dependencies
+      Pathname("#{Dir.home}/.stack/config.yaml").write <<~YAML
+        ghc-options:
+          "$everything": -split-sections -fPIC -fexternal-dynamic-refs
+      YAML
+    end
+
+    # Let `stack` handle its own parallelization
+    ENV.deparallelize { system "stack", "install", *args }
   end
 
   test do
