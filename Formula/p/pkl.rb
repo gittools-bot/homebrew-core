@@ -6,12 +6,12 @@ class Pkl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fdcab18138d456fb6881b668da8c61b234ca5706b03897b10e118212a739e2ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb721480d9df39ccfa3daf3254989efa9de2c6ac1b462f457399589de9fbf436"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "323808dbc5bcc8d4db40b0051cb67b62de8db21b53816fcd0bea4080141d1759"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07265a693f6211f63c1a431ad4792bdf22c5fe106fde0a088ac481dd90dc673b"
-    sha256 cellar: :any,                 arm64_linux:   "d7a0d166c228853aa16ba5361dc09022f3e1234228424f25b64378545024dde5"
-    sha256 cellar: :any,                 x86_64_linux:  "6366b82821383b18c6e3c2218c4bb1bc629d71db812affe3c2b331f19ff0bbff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b16ee390b9713158589b7dd095a4931b00c81207c0b0a53f887eb7d2b0a571a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "115fbb80ba094c6f84c4cb43f83bebea6f21fcb0ce2819c58c872d97c66883c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c165aeca1146bcc69f4cbb7864b270153c30cbf98c30b0515811e8f3394c097b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df6dcd16b83d520376cfeb64b7085b5b747e200f6114dcb11420f48a283e2c8e"
+    sha256 cellar: :any,                 arm64_linux:   "dfb2d79f373c5befd9bb35a01e711fd292526c5f95abbe140c784d081c08ffa0"
+    sha256 cellar: :any,                 x86_64_linux:  "91f78fd26468cd9625aa34be24ae0f008cdbe2e4c7ccfef09a6cdda119139d1f"
   end
 
   depends_on "gradle" => :build
