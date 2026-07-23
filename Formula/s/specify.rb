@@ -8,12 +8,12 @@ class Specify < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de1b63274bf1a139bee9bd91a3a3a2a81e43ae5a7b07f98fd59c5c9510c8af01"
-    sha256 cellar: :any, arm64_sequoia: "2e3feff70278dfd135ebaad2b41eb0d87a17f714ec499fec5fe062b9d033c714"
-    sha256 cellar: :any, arm64_sonoma:  "a9d5806403d9409e7a7f96417be94050f79a8d21b46feca96944d6eb03cf6864"
-    sha256 cellar: :any, sonoma:        "1f08c68062d746916cbc0d3607fe3f10bdb299b0f43280f099d54bc31594505d"
-    sha256 cellar: :any, arm64_linux:   "9114942f3f080d41f761880441f0f9add46fdb81aec2993728ac9591e8aea8b7"
-    sha256 cellar: :any, x86_64_linux:  "510866ce2f957f98d0a1d29e1b93b899ba5a9c9f7532469fcdb59c3040a2430b"
+    sha256 cellar: :any, arm64_tahoe:   "0af723d4f498fff60e125ef6f777858c1eca0ba16796136da5edfdc41bf97e3d"
+    sha256 cellar: :any, arm64_sequoia: "668f3baf542aeada9d9a3eb4dde9a32f4e9fc9d73c378763d8d45598909a223e"
+    sha256 cellar: :any, arm64_sonoma:  "a673c334a822301460fc27275eab9298c27d58caf4ddec6ab81f0cff9f275b81"
+    sha256 cellar: :any, sonoma:        "2506e0135dc234f21c1073cb69a6c0004f2d8dd24440ff90a2620ad421710527"
+    sha256 cellar: :any, arm64_linux:   "af1343e8a3b183072544c746a565fec10ba4e847b0e6b94929277ddf15c4d76c"
+    sha256 cellar: :any, x86_64_linux:  "c3ed28303f43d761526402b1d44a72f50843da5fe6099a97a31a3c6ff617cfac"
   end
 
   depends_on "certifi" => :no_linkage
