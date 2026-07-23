@@ -45,9 +45,12 @@ class Unisonlang < Formula
   depends_on "ghc@9.10" => :build
   depends_on "haskell-stack" => :build
   depends_on "node" => :build
+  depends_on "pkgconf" => :build
+  depends_on "libyaml"
 
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
+  uses_from_macos "sqlite"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -87,18 +90,28 @@ class Unisonlang < Formula
 
     stack_args = %W[
       -v
-      --copy-bins
-      --local-bin-path=#{buildpath}
+      --flag=direct-sqlite:systemlib
+      --flag=libyaml:system-libyaml
+      --flag=persistent-sqlite:systemlib
+      --flag=persistent-sqlite:use-pkgconfig
+      --jobs=#{jobs}
+      --local-bin-path=#{prefix}
       --no-install-ghc
       --skip-ghc-check
       --system-ghc
     ]
-    stack_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
+    if OS.linux?
+      stack_args << "--ghc-options=-pie"
 
-    system "stack", "-j#{jobs}", "build", *stack_args
+      # Using global configuration to apply options to all dependencies
+      Pathname("#{Dir.home}/.stack/config.yaml").write <<~YAML
+        ghc-options:
+          "$everything": -split-sections -fPIC -fexternal-dynamic-refs
+      YAML
+    end
 
-    prefix.install "unison" => "ucm"
-    bin.install_symlink prefix/"ucm"
+    system "stack", "install", *stack_args
+    bin.install_symlink prefix/"unison" => "ucm"
   end
 
   test do
