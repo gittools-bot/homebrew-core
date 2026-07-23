@@ -12,12 +12,7 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ce5b07cabdd8185063c038f78967505155abe8750ec2f486c8e3b8c58642da6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ce5b07cabdd8185063c038f78967505155abe8750ec2f486c8e3b8c58642da6"
+    sha256 cellar: :any_skip_relocation, all: "cf7e93df3d04f746c26ed4937fd64db778228ff242229a16b1648d669e8aaf48"
   end
 
   depends_on "erlang@28"
