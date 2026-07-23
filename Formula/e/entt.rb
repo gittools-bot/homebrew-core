@@ -1,10 +1,10 @@
 class Entt < Formula
   desc "Fast and reliable entity-component system for C++"
   homepage "https://github.com/skypjack/entt/wiki"
-  url "https://github.com/skypjack/entt/archive/refs/tags/v3.16.0.tar.gz"
-  sha256 "7d7b4037b737992342049ffab14f22fa10243e01664f8c3a0657aa247ac52f71"
+  url "https://github.com/skypjack/entt/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "32a2ff2c72cb047dfd57306006ef238820b70da7c6ce4e7e8a507ac63365212e"
   license "MIT"
-  head "https://github.com/skypjack/entt.git", branch: "master"
+  head "https://github.com/skypjack/entt.git", branch: "main"
 
   livecheck do
     url :stable
@@ -16,11 +16,10 @@ class Entt < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "pkgconf" => :test
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DENTT_INSTALL=ON", "-DENTT_BUILD_DOCS=ON", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DENTT_INSTALL=ON", "-DENTT_BUILD_DOCS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -51,7 +50,7 @@ class Entt < Formula
       }
     CPP
     pkg_config_flags = shell_output("pkgconf --cflags --libs entt").chomp.split
-    system ENV.cxx, "-std=c++17", *pkg_config_flags, "test.cpp", "-o", "test"
+    system ENV.cxx, "-std=c++20", *pkg_config_flags, "test.cpp", "-o", "test"
     system "./test"
   end
 end
