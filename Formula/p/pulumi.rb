@@ -2,8 +2,8 @@ class Pulumi < Formula
   desc "Cloud native development platform"
   homepage "https://www.pulumi.com/"
   url "https://github.com/pulumi/pulumi.git",
-      tag:      "v3.253.0",
-      revision: "94536e530d770753b42087931c3e5c0b3c5a51b7"
+      tag:      "v3.254.0",
+      revision: "656b95485a444cc41748b4c3b3e803126bf4ce8f"
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi.git", branch: "master"
 
@@ -40,8 +40,18 @@ class Pulumi < Formula
   test do
     ENV["PULUMI_ACCESS_TOKEN"] = "local://"
     ENV["PULUMI_HOME"] = testpath
-    ENV["PULUMI_TEMPLATE_PATH"] = testpath/"templates"
+
+    (testpath/"template/Pulumi.yaml").write <<~YAML
+      name: ${PROJECT}
+      description: ${DESCRIPTION}
+      runtime: nodejs
+      template:
+        description: minimal test template
+    YAML
+    (testpath/"template/index.ts").write "console.log(\"hi\");\n"
+
     assert_match "Your new project is ready to go!",
-                 shell_output("#{bin}/pulumi new aws-typescript --generate-only --force --yes")
+                 shell_output("#{bin}/pulumi new #{testpath}/template --generate-only --force --yes")
+    assert_path_exists testpath/"index.ts"
   end
 end
