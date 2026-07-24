@@ -46,9 +46,9 @@ class Libosinfo < Formula
   end
 
   # Backport fix for libxml2 >= 2.14
+  # Remove in the next release: https://gitlab.com/libosinfo/libosinfo/-/merge_requests/162
   patch do
-    url "https://gitlab.com/libosinfo/libosinfo/-/commit/0adf38535637ec668e658d43f04f60f11f51574f.diff"
-    sha256 "19fd45d55549decb981a6c1d83e4c8177eab88054ec545e4d97b63ab787df4d0"
+    file "Patches/libosinfo/libxml2_deprecated_apis.patch"
   end
 
   def install
