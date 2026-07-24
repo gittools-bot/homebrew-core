@@ -1,8 +1,8 @@
 class BehaviortreeCpp < Formula
   desc "Behavior Trees Library in C++"
   homepage "https://www.behaviortree.dev/"
-  url "https://github.com/BehaviorTree/BehaviorTree.CPP/archive/refs/tags/4.9.1.tar.gz"
-  sha256 "509f508aa8ce38ec8c54b91e94f2049c4b00905474d38e503057f0c2a3054e31"
+  url "https://github.com/BehaviorTree/BehaviorTree.CPP/archive/refs/tags/4.10.0.tar.gz"
+  sha256 "c758fdedb3666f7ca4c9998a4c0b243251e0a5fb5d03c99e2ee63d615af7a71d"
   license "MIT"
 
   bottle do
@@ -19,13 +19,6 @@ class BehaviortreeCpp < Formula
   depends_on "zeromq"
 
   uses_from_macos "sqlite"
-
-  # Apple libc++ has no floating-point std::from_chars; fall back to std::stod.
-  # PR ref: https://github.com/BehaviorTree/BehaviorTree.CPP/pull/1160
-  patch do
-    url "https://github.com/BehaviorTree/BehaviorTree.CPP/commit/865e9a47eca0f8a1b10c636d90f4b00eebe360af.patch?full_index=1"
-    sha256 "4ab0e1d247a89a3d29c8eb3a6d1423d4eaedb5d07f26cf4f211d8258e6650d2c"
-  end
 
   def install
     args = %W[
