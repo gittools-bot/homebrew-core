@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/9f/10/051280a9692499d4102741e02482eb8245012b6b7d285254ae4612a2d9c5/esphome-2026.7.1.tar.gz"
-  sha256 "7ebfa65022df03eb6c0138d36aa9d87a8ccc3c98fcdc3d78b1c060e9771b5959"
+  url "https://files.pythonhosted.org/packages/e2/0f/1440d1740383217bbed7d0a5c69887631d2cf25f26fcd835ffba65d63e71/esphome-2026.7.2.tar.gz"
+  sha256 "3f5082f5122f6d96d642ba773297876cadffdb626611a015f76a6a669ccf48e1"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -41,8 +41,8 @@ class Esphome < Formula
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/9a/a5/83619d21e0e9850251dafb8731b6c15b6fd4615d9a50fd3979d36f0e3932/aioesphomeapi-45.6.2.tar.gz"
-    sha256 "d09d89101d46cddb6ed07e4f038fc85d2e20038f041c098141c4f8f051c1567d"
+    url "https://files.pythonhosted.org/packages/2b/a7/f56796e0bb67be336eec23749a9ea0b848ffb805d38ebdd52563cc7088db/aioesphomeapi-45.7.0.tar.gz"
+    sha256 "66be75dc5962a9fec08a41f375039834b1bfd210bfd5b99efe3404da05002aa3"
   end
 
   resource "aiohappyeyeballs" do
