@@ -8,10 +8,13 @@ class Pipdeptree < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dac05abc8d96db8db287eccab40b163d556be51f9d7a551f05573f6892984fa9"
-    sha256 cellar: :any, arm64_sequoia: "be8eb7a4309bba470426652afd5475a4477565aa14ceb47a9b2670bf60227fa5"
-    sha256 cellar: :any, arm64_sonoma:  "9fc8bad90d6d9d8c94d5aca460827019dff61493ba4df85561fce2886faf33d0"
-    sha256 cellar: :any, sonoma:        "bbf7a556f710d3f2bfa551e253c845739a400d7d85f7368c576b16781914fe44"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "aab768017cd7cda17ac06e165aba30fe7932226d1c005253baf5068cd4754857"
+    sha256 cellar: :any, arm64_sequoia: "dc704a5bd6f217ab1afc96666c4f29c67653826f7f500e3128026968642110a8"
+    sha256 cellar: :any, arm64_sonoma:  "a1429e0cde8d19eb3ccbf209b2df942b862e67ca411e7cb7d90b662819b42374"
+    sha256 cellar: :any, sonoma:        "0aa24236e820c0d0447c93fe0b03cca875428084b6d400e8e5ed4ec7e4d4e3e9"
+    sha256 cellar: :any, arm64_linux:   "645d88b6834fc9755dee99661c10aa681e3cc60d5c04ff546bbda7a2196b052a"
+    sha256 cellar: :any, x86_64_linux:  "70d38a6b96c6033b47352c6971650fee56b218db04a1c9c1b6992172893b2e32"
   end
 
   depends_on "meson" => :build
