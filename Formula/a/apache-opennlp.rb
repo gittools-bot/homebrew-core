@@ -7,7 +7,7 @@ class ApacheOpennlp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6f8fc0741fa2ea27fa203041bf1013bc6c36c988c9994840ce9220337e4b1cf9"
+    sha256 cellar: :any_skip_relocation, all: "9b04faca13b2b05500f42f716be144fb2b7a6d765478cd21ca4fcf72cb97c64f"
   end
 
   depends_on "openjdk"
