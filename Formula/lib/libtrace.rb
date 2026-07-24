@@ -15,12 +15,12 @@ class Libtrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "23df8c589a9cae7c3453118292aff407ac9b83350cfb11b4e529c2b16ec8c6e3"
-    sha256 cellar: :any, arm64_sequoia: "511460467e7cc7db556874bbf8ac6bdacd11538be67d7823043ebc3c19efaba1"
-    sha256 cellar: :any, arm64_sonoma:  "f8bf558325e4eb6484ebdf429ad05a487ef4f876becc701449482a32796a3ae8"
-    sha256 cellar: :any, sonoma:        "67b3bc6ff60c084766272d4a745fd3ef60621f89cbca51ebf095d2e6821f7202"
-    sha256 cellar: :any, arm64_linux:   "2230061e26263889ff2780062fdbc2f8e1bafd445c057cce1f99d5f5ebe68fa1"
-    sha256 cellar: :any, x86_64_linux:  "0371cb54dbd31f06abfbb07a33c5a556e056a303093cb605292bf160712ffab6"
+    sha256 cellar: :any, arm64_tahoe:   "9587cf2b3e8d21d114486ae24fbce59901ef47435e776e417d8e9e0ec8ef4c34"
+    sha256 cellar: :any, arm64_sequoia: "ca305993258f596bd46c2d06203b60033fd75c8588a2fd3592a919caef0ec2f4"
+    sha256 cellar: :any, arm64_sonoma:  "e91ab7f1bf95cff16169fd063b3638276f0386059d26082ab9b9e557036e73c5"
+    sha256 cellar: :any, sonoma:        "9263057041b13eac706800688578c21f3650e767395636b7303e08aee94b20da"
+    sha256 cellar: :any, arm64_linux:   "b3957786522a41e553d51aa057329676e5ba1318b97d76e6e0fafcf2b32fbbee"
+    sha256 cellar: :any, x86_64_linux:  "9993ecea0c42030e9ec6c4edd02dd0b3bddcaea09ef3e46017c079a2dde4bb3f"
   end
 
   depends_on "autoconf" => :build
