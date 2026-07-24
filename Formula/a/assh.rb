@@ -7,12 +7,12 @@ class Assh < Formula
   head "https://github.com/moul/assh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90d63d7a873cf718e770fbef532468ec2edebc8a6bd5704cd7c4f8c9d7bf554f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "683e1c8048760076146ce095596469ae2514d0cd2d60f3c2c60418289c9b8612"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8adb4a260bbf2e5b517166888b55222d7867fd7bc110fa350ac15e1852a76dd5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "beda22fe935a54c00605d0ad185f0f148ec5aad08c5612378fc9837fb3643096"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "533d73958dd2c5a622ebcf0eff45c1023f48932861fd55c04b95f562da91904a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4976e76276e8a26c1023f8d799ad4607bd3dc7c05d46b4a2eb96a04b14d95e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c4f32ab8a470210c7c178888bb8b3d6570a246fea3a12a2e06c18ff987daeef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f0fe13a870813c624a9f71b6df962460481515f457666bec65d6058dad41b2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b9c43256e3a3cc9d43040a9b8697476ea965f653a5c1ee7e4478b9cc9596956"
+    sha256 cellar: :any_skip_relocation, sonoma:        "552f9a8e8998f56f1b59f0002e118561812d7907e8448e591f5bf237dd3775ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4317f8468e5e966c5f5345686f55f9bdbd0e430b4969cf0f984fb81d7f66e7d"
+    sha256 cellar: :any,                 x86_64_linux:  "039230b99b68a5546c8b85e8034175d70cfec690bd07c26ea59ebc38a6e45b6f"
   end
 
   depends_on "go" => :build
