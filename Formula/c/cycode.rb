@@ -3,10 +3,9 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/7b/d0/0b09542791f1983dbce697d28a11abebde6cb91131600e2ac919831e7935/cycode-3.17.2.tar.gz"
-  sha256 "e1c4c42f46a7db8a206344f9eb552c85a03feeb31f97f4d1efd226f656c7c8e5"
+  url "https://files.pythonhosted.org/packages/c7/47/d7889309127cf201998cb2d1bb85b4d78fb5fdc973b17191608be599507e/cycode-3.18.0.tar.gz"
+  sha256 "8c56c04674bc0816534e062004f224e3e4688c2fd837bf77bbc17dc287c87769"
   license "MIT"
-  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
@@ -63,8 +62,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "h11" do
