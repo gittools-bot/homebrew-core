@@ -1,8 +1,8 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://github.com/microsoft/garnet/archive/refs/tags/v1.1.10.tar.gz"
-  sha256 "aa0603a4a473fd0358f6597f237484f96a0ea9d92b1c1efd271dbd6cd94f9387"
+  url "https://github.com/microsoft/garnet/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "afaad70dc25bc557536937652646c3bdc233eb497447e0973a6990122771cbac"
   license "MIT"
 
   livecheck do
@@ -19,6 +19,7 @@ class Garnet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e31e5a8b38b199f13c3d27f630c32a392d5d05e5a3a553e831b1321ee8b02a0f"
   end
 
+  depends_on "rust" => :build
   depends_on "valkey" => :test
   depends_on "dotnet"
 
@@ -32,14 +33,19 @@ class Garnet < Formula
     # Ignore dotnet version specification and use homebrew one
     rm "global.json"
 
+    # Drop the prebuilt BfTree binaries; msbuild rebuilds the library with cargo and prefers its copy
+    rm_r Dir["libs/native/bftree-garnet/runtimes/*"]
+
     if OS.linux?
       cd "libs/storage/Tsavorite/cc" do
-        # Fix to cmake version 4 compatibility
-        arg = "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
-        system "cmake", "-S", ".", "-B", "build", arg, *std_cmake_args
+        args = %w[
+          -DUSE_URING=OFF
+        ]
+        system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
         system "cmake", "--build", "build"
         rm "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device.so"
         cp "build/libnative_device.so", "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device.so"
+        cp "build/libnative_device.so", "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device_libaio.so"
       end
     end
 
