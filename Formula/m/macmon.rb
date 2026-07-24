@@ -1,8 +1,8 @@
 class Macmon < Formula
   desc "Sudoless performance monitoring for Apple Silicon processors"
   homepage "https://github.com/vladkens/macmon"
-  url "https://github.com/vladkens/macmon/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "ac8169a4a59afe2a93e033dbf0215682d78a6dddf600398634d0192868787fed"
+  url "https://github.com/vladkens/macmon/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "e96d62f2a5c26591824a434d2a9495abed0b4a50c31da710fbecce2759e3b0af"
   license "MIT"
   head "https://github.com/vladkens/macmon.git", branch: "main"
 
@@ -22,6 +22,6 @@ class Macmon < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/macmon --version")
-    assert_match "Failed to get channels", shell_output("#{bin}/macmon debug 2>&1", 1)
+    assert_match "Failed to create subscription", shell_output("#{bin}/macmon debug 2>&1", 1)
   end
 end
