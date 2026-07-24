@@ -1,17 +1,17 @@
 class Droast < Formula
   desc "Opinionated Dockerfile linter"
   homepage "https://ewry.net/droast-dockerfile-linter/"
-  url "https://github.com/immanuwell/dockerfile-roast/archive/refs/tags/1.4.8.tar.gz"
-  sha256 "a00af14ce3eb08f8913d2e839265678ce2ad151aeed2b233c1807d6cf69b9347"
+  url "https://github.com/immanuwell/dockerfile-roast/archive/refs/tags/1.4.9.tar.gz"
+  sha256 "e58b846cac1537afcb4a07183bf6beac94a8383eac2c88528cd46399ed03922c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb015b5804b3a17da6e7b6f6cc77c921700d6484240a952bf5d9bb91d526b52a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b42c568424c17463981c53541421ac2a696fdf5061c8974d142c0bb87bde0bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4e336ef2e8087042ff6d614806c9b43580b61107e49e9ef10329f5abba570af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e6c1f47eae13e49eb8d2f9580bbf656c4057e798641e1116cc1bbd178d5ab423"
-    sha256 cellar: :any,                 arm64_linux:   "d6c3108c28b6f6ca347ce45edf27c0ef15b9b40347afca4d6023d358bb02ef62"
-    sha256 cellar: :any,                 x86_64_linux:  "14b5c9e711aa7d6e17ec3f98e26fdf9dcbfb54a24c682198cae9e33109a20ed1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29f5c8ad443e24bc49516388761ef237cf42220050d221d4017705babe8aee80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08c2e65f8be17fd6193a243b60e7b67c29a7832fe55ee3513632c63f7592d173"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b93fc4fe11b598e658b9a63d8a5b9434bf05aa4b35d7491f6189d0d1109cb221"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7afbba06e4aa0e80da7ea215e50bd9d0d99114a4795891181e8d07de844bf9ba"
+    sha256 cellar: :any,                 arm64_linux:   "7dcef1f44295503674e612a29d763fcd3c4cb9005f2bf6a4b49e8aebb4187931"
+    sha256 cellar: :any,                 x86_64_linux:  "a7712244e4aa29fbed3a891be63361c7bba723fac693675afc781c9e295ddb7a"
   end
 
   depends_on "rust" => :build
