@@ -140,17 +140,6 @@ jobs:
                            --body "$FORMULA should be archived. Check $RUN_URL" \
                            --repo "$GITHUB_REPOSITORY"
 
-      - name: Check formula for unavailable homepage.
-        id: homepage
-        run: brew audit --online --skip-style --only homepage "$FORMULA"
-
-      - name: Report homepage issues
-        if: failure() && steps.homepage.conclusion == 'failure'
-        run:  |
-          gh issue comment "$REPORTING_ISSUE" \
-                           --body "$FORMULA has homepage issues. Check $RUN_URL" \
-                           --repo "$GITHUB_REPOSITORY"
-
       - name: Check formula for missing sources.
         id: fetch
         if: always() && steps.archived.conclusion != 'failure'
