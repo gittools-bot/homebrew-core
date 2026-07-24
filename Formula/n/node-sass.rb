@@ -6,12 +6,12 @@ class NodeSass < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e95ab62a58ae9943a409800e4187c0f773592e2781c304e17d5766238d07862"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e95ab62a58ae9943a409800e4187c0f773592e2781c304e17d5766238d07862"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e95ab62a58ae9943a409800e4187c0f773592e2781c304e17d5766238d07862"
-    sha256 cellar: :any_skip_relocation, sonoma:        "915aed6769514039d034fe865b6af07a81b814a3da21877abacb45cc370fd18e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c43a222bee39bf3dce6c54fc12a35baa528c1b073541fe2dae1248eaa3b7811c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d6be97ae45c162e7f1403188f8f4c4762530883c11b360dd7f3e9af0eab353d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "505898048086dd357e25548b57e7fc677dd4f71ee4c1ebf31074a73340e38b08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "505898048086dd357e25548b57e7fc677dd4f71ee4c1ebf31074a73340e38b08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "505898048086dd357e25548b57e7fc677dd4f71ee4c1ebf31074a73340e38b08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec0e6c62968ffa6cc8e2689f5525e726abe1085c8d992e0ce694d3d39680bb13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54a01170365873ef906e30132995fc064f1ca3ab6c764be2a3ef41c2531d3dbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f3d36a2bf599f6561ec8a5b891aadca0864d16f0705d5ebf6467ea99660060"
   end
 
   depends_on "node"
