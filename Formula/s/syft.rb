@@ -17,6 +17,13 @@ class Syft < Formula
 
   depends_on "go" => :build
 
+  # `test do` block downloads a test fixture resource
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X main.version=#{version}
@@ -36,7 +43,8 @@ class Syft < Formula
     end
 
     testpath.install resource("homebrew-micronaut.cdx.json")
-    output = shell_output("#{bin}/syft convert #{testpath}/micronaut.json")
+    # Redirect stderr so the progress UI does not engage on the sandbox PTY and hang
+    output = shell_output("#{bin}/syft convert #{testpath}/micronaut.json 2>/dev/null")
     assert_match "netty-codec-http2  4.1.73.Final  UnknownPackage", output
 
     assert_match version.to_s, shell_output("#{bin}/syft --version")
