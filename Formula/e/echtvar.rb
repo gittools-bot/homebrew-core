@@ -20,12 +20,22 @@ class Echtvar < Formula
   depends_on "python@3.14" => :test
   depends_on "openssl@3"
 
+  uses_from_macos "llvm" => :build # for `libclang`, used by `hts-sys` bindgen
   uses_from_macos "bzip2"
+
+  # Fix build with hts-sys 2.2.1 bindings (no lockfile upstream)
+  patch do
+    url "https://github.com/brentp/echtvar/commit/5d3b3600d0f3a9243b19ed5617076b46276c62fb.patch?full_index=1"
+    sha256 "4ef184305ca098f3b8466b1c08e27354c346aa01653312af99cff657a7c2459b"
+    type :unofficial
+    resolves "https://github.com/brentp/echtvar/pull/59"
+  end
 
   def install
     # portable_simd feature requires nightly.
     # Use a stable-Rust stub to keep the CLI buildable without nightly.
     ENV["RUSTC_BOOTSTRAP"] = "1"
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args
     pkgshare.install "tests"
