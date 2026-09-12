@@ -49,6 +49,9 @@ class Expect < Formula
   end
 
   def install
+    # Upstream still uses K&R function definitions, which do not compile as C23.
+    ENV.append_to_cflags "-std=gnu17"
+
     tcltk = Formula["tcl-tk@8"]
     args = %W[
       --prefix=#{prefix}
