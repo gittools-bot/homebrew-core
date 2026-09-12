@@ -1,11 +1,30 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
-  url "https://github.com/halide/Halide/archive/refs/tags/v21.0.0.tar.gz"
-  sha256 "aa6b6f5e89709ca6bc754ce72b8b13b2abce0d6b001cb2516b1c6f518f910141"
   license "MIT"
   revision 1
   head "https://github.com/halide/Halide.git", branch: "main"
+
+  stable do
+    url "https://github.com/halide/Halide/archive/refs/tags/v21.0.0.tar.gz"
+    sha256 "aa6b6f5e89709ca6bc754ce72b8b13b2abce0d6b001cb2516b1c6f518f910141"
+
+    # Backport support for wabt 1.0.39
+    patch do
+      url "https://github.com/halide/Halide/commit/7d7f0b4422594296fed1d561a43dc262d163d2b8.patch?full_index=1"
+      sha256 "6b861e585ce4d71aec53b225562e078086ee310e8c6e7a052bf3fd53f03322ab"
+      type :backport
+      resolves "https://github.com/halide/Halide/pull/8923"
+    end
+
+    # Backport dropping the exact wabt version to build with wabt 1.0.41
+    patch do
+      url "https://github.com/halide/Halide/commit/6a7ed977f0e03dc812b8ae4ef43654178d651c46.patch?full_index=1"
+      sha256 "63232c844394cbaff3137f2a9e144579d4ad0af150ed1cf0e784edcc3d07b503"
+      type :backport
+      resolves "https://github.com/halide/Halide/pull/9016"
+    end
+  end
 
   livecheck do
     url :stable
@@ -33,14 +52,6 @@ class Halide < Formula
 
   on_macos do
     depends_on "openssl@3"
-  end
-
-  # Backport support for wabt 1.0.39
-  patch do
-    url "https://github.com/halide/Halide/commit/7d7f0b4422594296fed1d561a43dc262d163d2b8.patch?full_index=1"
-    sha256 "6b861e585ce4d71aec53b225562e078086ee310e8c6e7a052bf3fd53f03322ab"
-    type :backport
-    resolves "https://github.com/halide/Halide/pull/8923"
   end
 
   def install
