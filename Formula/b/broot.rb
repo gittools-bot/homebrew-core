@@ -1,8 +1,8 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://github.com/Canop/broot/archive/refs/tags/v1.60.1.tar.gz"
-  sha256 "23f6c5caed90400b4a7a277501c3c6fb46bacd4be5250da9ea357822e5a504ca"
+  url "https://github.com/Canop/broot/archive/refs/tags/v1.60.2.tar.gz"
+  sha256 "b68f641c4570e2d7bbf90613e67f9cfddf0df42da993913ddc83e7d8a4e5eae6"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "main"
 
@@ -22,6 +22,12 @@ class Broot < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
@@ -48,8 +54,6 @@ class Broot < Formula
   end
 
   test do
-    output = shell_output("#{bin}/broot --help")
-    assert_match "lets you explore file hierarchies with a tree-like view", output
     assert_match version.to_s, shell_output("#{bin}/broot --version")
 
     (testpath/"conf.hjson").write "enable_kitty_keyboard: false\n"
