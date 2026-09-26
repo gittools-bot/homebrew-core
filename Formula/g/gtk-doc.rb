@@ -3,10 +3,9 @@ class GtkDoc < Formula
 
   desc "GTK+ documentation tool"
   homepage "https://gitlab.gnome.org/GNOME/gtk-doc"
-  url "https://download.gnome.org/sources/gtk-doc/1.36/gtk-doc-1.36.1.tar.xz"
-  sha256 "0e517a5f97069831181be177516bde8aa8b3922398f2bdb09e265d22aecadbc5"
+  url "https://download.gnome.org/sources/gtk-doc/1.37/gtk-doc-1.37.0.tar.xz"
+  sha256 "2facfb530ddcd20c03ed4758ef934e832626c393e2cacd23fc1249b7ed0e4246"
   license "GPL-2.0-or-later"
-  revision 1
 
   # We use a common regex because gtk-doc doesn't use GNOME's
   # "even-numbered minor is stable" version scheme.
@@ -39,13 +38,13 @@ class GtkDoc < Formula
                 extra_packages: %w[lxml pygments]
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   def install
