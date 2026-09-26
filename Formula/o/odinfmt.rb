@@ -31,6 +31,8 @@ class Odinfmt < Formula
       -o:speed
       -file
     ]
+    # Odin defaults to x86-64-v2, which is newer than Homebrew's oldest supported x86_64 CPU
+    args << "-microarch:#{ENV.effective_arch}" if Hardware::CPU.intel?
     system "odin", "build", "tools/odinfmt/main.odin", *args
 
     bin.install "odinfmt"
