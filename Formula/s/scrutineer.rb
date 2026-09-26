@@ -7,11 +7,11 @@ class Scrutineer < Formula
   head "https://github.com/alpha-omega-security/scrutineer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c877d7807d31a0db5b63e6842125c07e27719e52aaeb14d320322f18caea12d7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c877d7807d31a0db5b63e6842125c07e27719e52aaeb14d320322f18caea12d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c877d7807d31a0db5b63e6842125c07e27719e52aaeb14d320322f18caea12d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bbd2f31136a96852c5f5714f478cfa17de20d84a2f135563301774c75391b501"
-    sha256 cellar: :any,                 x86_64_linux:      "5dfed42383f939b6b4d3eedcee0494ea214d5a43630f0ea19aa45e9263c803d1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5c9790b8e0e1205c3d423371fc5c3d7782106c0fbea3646113bab65808f69021"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5c9790b8e0e1205c3d423371fc5c3d7782106c0fbea3646113bab65808f69021"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5c9790b8e0e1205c3d423371fc5c3d7782106c0fbea3646113bab65808f69021"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "28bb14dda9b4ec44cf9b9785aadc9b55d291889afe3c5538d9f7f4fe47608eba"
+    sha256 cellar: :any,                 x86_64_linux:      "633917d3916b8540dee090451301566203bd5dbc110c70cd44b566e49ff2f9b2"
   end
 
   depends_on "go" => :build
