@@ -6,7 +6,7 @@ class TypescriptLanguageServer < Formula
   license all_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e32077036e769522780f323b3f6774ac43e163c8559c19f27b8a3eacd77dbd57"
+    sha256 cellar: :any_skip_relocation, all: "f346cc5dad777d5ce139d25b8b6108814b77c2020393023eedaa93cdb0de3b03"
   end
 
   depends_on "node"
