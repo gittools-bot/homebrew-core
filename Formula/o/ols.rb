@@ -29,10 +29,11 @@ class Ols < Formula
       -out:ols
       -collection:src=src
       -define:VERSION=#{version}
-      -microarch:native
       -o:speed
       -no-bounds-check
     ]
+    # Odin defaults to x86-64-v2, which is newer than Homebrew's oldest supported x86_64 CPU
+    args << "-microarch:#{ENV.effective_arch}" if Hardware::CPU.intel?
     system "odin", "build", "src/", *args
 
     libexec.install "ols"
