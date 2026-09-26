@@ -5,11 +5,11 @@ class Bsc < Formula
   head "https://github.com/B-Lang-org/bsc.git", branch: "main"
 
   stable do
-    url "https://github.com/B-Lang-org/bsc/archive/refs/tags/2026.01.tar.gz"
-    sha256 "f9204b7d6efd6ac2b2c1b42c80b01d179319ac33575d258719eaf73be44d4ec5"
+    url "https://github.com/B-Lang-org/bsc/archive/refs/tags/2026.07.1.tar.gz"
+    sha256 "819026c092715671b17003dd9bad4863498d89171bfbf0ad358905161cf80db2"
 
     resource "yices" do
-      url "https://github.com/B-Lang-org/bsc/releases/download/2026.01/yices-src-for-bsc-2026.01.tar.gz", using: :nounzip
+      url "https://github.com/B-Lang-org/bsc/releases/download/2026.07.1/yices-src-for-bsc-2026.07.1.tar.gz", using: :nounzip
       sha256 "a5114c8f1e04a75a06598ac9763922f9186554b6f1326c1454b2e06deafd5575"
 
       livecheck do
